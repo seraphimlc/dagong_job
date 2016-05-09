@@ -1,0 +1,17 @@
+
+<a href="#"><img src="/images/t_06.png" width="100%" class="v_m"/></a>
+<article class="bgf c_9">
+    <ul>
+        #if($jobList)
+            #foreach($element in $jobList)
+            <li class="bb pt2 pb2 pl2 pr2">
+                <a href="/job/detail.do?jobId=$element.id"><p>$element.jobType</p>
+                <div class="clearfix"><span class="l">$element.companyId</span><span class="red01 r">￥$element.startSalary~$element.endSalary</span>
+                </div>
+                <p>$element.address</p>
+                </a>
+            </li>
+        #end
+    #end
+    </ul>
+</article>

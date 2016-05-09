@@ -1,0 +1,16 @@
+<table>
+#foreach($s in $jobList)
+<tr>
+    <td>$s.jobName</td> <td>$s.companyId</td><><input type="button" onclick="apply($s.jobId)" value="应聘"> </td>
+</tr>
+
+
+#end
+
+    hello.vm
+</table>
+<script language="JavaScript" >
+    function apply(jobId){
+
+    }
+</script>

@@ -1,0 +1,34 @@
+<div class="pt25 pl3 pr3">
+    <div class="clearfix">
+        <a href="#" class="c_f l"><img src="/images/left_03.png" width="22" class="v_m"/> <span
+                class="v_m">设置</span></a>
+        <a href="#" class="c_f r"><img src="/images/left_05.png" width="22" class="v_m"/> <span
+                class="v_m">退出登录</span></a>
+    </div>
+    <div class="t_c pt5">
+        <a href="#"><img src="/images/left_10.png" class="v_m" width="140"/></a>
+
+        <p class="pt2 f3 blue">Zhangsan</p>
+
+        <p class="c_9">北京市朝阳区</p>
+    </div>
+    <ul class="pt5">
+        <li class="clearfix"><a href="#" class="l c_f"><img src="/images/left_14.png" class="v_m" width="25"/>
+            <span class="v_m pl2">我的简历</span></a></li>
+        <li class="clearfix pt2"><a href="#" class="l c_f"><img src="/images/left_17.png" class="v_m"
+                                                                width="25"/> <span
+                class="v_m pl2">我的应聘</span></a><span class="r left_span dnb">22</span></li>
+        <li class="clearfix pt2"><a href="#" class="l c_f"><img src="/images/left_19.png" class="v_m"
+                                                                width="25"/> <span
+                class="v_m pl2">我的关注</span></a><span class="r left_span left_span01 dnb">5</span></li>
+        <li class="clearfix pt2"><a href="#" class="l c_f"><img src="/images/left_21.png" class="v_m"
+                                                                width="25"/> <span
+                class="v_m pl2">我的消息</span></a><span class="r left_span left_span02 dnb">5</span></li>
+        <li class="clearfix pt2"><a href="#" class="l c_f"><img src="/images/left_23.png" class="v_m"
+                                                                width="25"/> <span
+                class="v_m pl2">我的评价</span></a></li>
+        <li class="clearfix pt2"><a href="#" class="l c_f"><img src="/images/left_25.png" class="v_m"
+                                                                width="25"/> <span
+                class="v_m pl2">我的要求</span></a></li>
+    </ul>
+</div>

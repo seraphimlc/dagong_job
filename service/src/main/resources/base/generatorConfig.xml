@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <classPathEntry
+            location="/Users/liuchang//.m2/repository/mysql-connector/mysql-connector/5.0.8/mysql-connector-5.0.8.jar"/>
+    <context id="my" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressDate" value="false"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://172.16.54.144:3306/dagong" userId="root" password="nirvana"/>
+
+        <javaModelGenerator targetPackage="com.dagong.pojo"
+                            targetProject="/Users/liuchang/Documents/workspace/projects/dagong/src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <sqlMapGenerator targetPackage="com.dagong.mapper"
+                         targetProject="/Users/liuchang/Documents/workspace/projects/dagong/src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator targetPackage="com.dagong.mapper"
+                             targetProject="/Users/liuchang/Documents/workspace/projects/dagong/src/main/java" type="XMLMAPPER">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+
+        <!--<table tableName="applylog" domainObjectName="ApplyLog"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+
+        <!--</table>-->
+        <!--<table tableName="applyrecord" domainObjectName="ApplyRecord"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+
+        <!--</table>-->
+        <!--<table tableName="wantjob" domainObjectName="WantJob"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+
+        <!--</table>-->
+        <!--<table tableName="wantinformation" domainObjectName="WantInformation"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+
+        <!--</table>-->
+        <!--<table tableName="wantenvironment" domainObjectName="WantEnvironment"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+
+        <!--</table>-->
+        <!--<table tableName="userskill" domainObjectName="UserSkill"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+
+        <!--</table>-->
+        <!--<table tableName="userexperience" domainObjectName="UserExperience"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+
+        <!--</table>-->
+        <!--<table tableName="userevaluation" domainObjectName="UserEvaluation"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+
+        <!--</table>-->
+        <!--<table tableName="user" domainObjectName="User"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+
+        <!--</table>-->
+        <!--<table tableName="job_type" domainObjectName="JobType"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+
+        <!--</table>-->
+        <!--<table tableName="jobstatus" domainObjectName="JobStatus"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+
+        <!--</table>-->
+        <!--<table tableName="joblog" domainObjectName="JobLog"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+
+        <!--</table>-->
+        <!--<table tableName="jobevaluation" domainObjectName="JobEvaluation"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+
+        <!--</table>-->
+        <!--<table tableName="job" domainObjectName="Job"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+
+        <!--</table>-->
+        <!--<table tableName="inviterecord" domainObjectName="InviteRecord"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+
+        <!--</table>-->
+        <!--<table tableName="invitelog" domainObjectName="InviteLog"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+        <!--<table tableName="followuser" domainObjectName="FollowUser"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+
+        <!--</table>-->
+        <!--<table tableName="followjob" domainObjectName="FollowJob"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+
+        <!--</table>-->
+        <!--<table tableName="followcompany" domainObjectName="FollowCompany"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+
+        <!--</table>-->
+        <!--<table tableName="contact" domainObjectName="Contact"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+
+        <!--</table>-->
+        <!--<table tableName="companyuser" domainObjectName="CompanyUser"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+
+        <!--</table>-->
+        <!--<table tableName="companyevaluation" domainObjectName="CompanyEvaluation"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+
+        <!--</table>-->
+        <!--<table tableName="company" domainObjectName="Company"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+
+        <!--</table>-->
+
+    </context>
+</generatorConfiguration>

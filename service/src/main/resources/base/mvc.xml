@@ -1,0 +1,28 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">-->
+        <!--<property name="prefix" value="/static/"/>-->
+        <!--<property name="suffix" value=".jsp"/>-->
+    <!--</bean>-->
+
+    <bean id="velocityConfigurer" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+        <property name="configLocation" value="classpath:base/velocity.properties" />
+        <property name="resourceLoaderPath" value="/" />
+    </bean>
+
+    <bean id="layoutViewResolver" class="org.springframework.web.servlet.view.velocity.VelocityLayoutViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.velocity.VelocityLayoutView" />
+        <property name="toolboxConfigLocation" value="classpath:/base/velocity-tools.xml" />
+        <property name="prefix" value="/"/>
+        <property name="suffix" value=".vm" />
+        <property name="layoutUrl" value="/view/common/layout/default.vm" />
+        <property name="layoutKey" value="layout" />
+        <property name="screenContentKey" value="screen_content" />
+        <property name="contentType" value="text/html;charset=UTF-8" />
+    </bean>
+
+
+</beans>

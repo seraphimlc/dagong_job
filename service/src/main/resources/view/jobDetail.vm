@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <title>职位描述</title>
+    <link href="/css/base.css" type="text/css" rel="stylesheet"/>
+    <link href="/css/style.css" type="text/css" rel="stylesheet"/>
+
+
+</head>
+
+<body>
+    #if($job)
+    <div class="wrap">
+
+        <header class="header bgf bb p_r t_c f3 blue">
+            职位描述
+            <a href="#" class="dnb return"></a>
+        </header>
+
+        <article class="mt2 b_t bb bgf pt2 pb2 pl2 pr2 c_9">
+            <p class="f3 blue">${job.jobName}</p>
+
+            <p>${job.companyId}</p>
+
+            <p>薪酬 <span class="red01 f3">
+            ￥${job.startSalary}~${job.endSalary}</span></p>
+        </article>
+
+        <article class="pl2 pr2 pt2 pb2">
+            <div class="bgf">
+                <p class="pt1 pl2 blue">职位描述</p>
+                <img src="/images/jb_06.png" width="100%" class="v_m"/>
+
+                <div class="pl2 pt1 pr2 pb2 c_9">
+                    ${job.detail}
+                </div>
+            </div>
+
+
+        </article>
+
+
+        <div class="t_c mt2 pt5 pb2"><a href="javascript:void(0);" onclick="follow();" class="gz_a f3 dnb v_m bod_r">关注</a>
+            <a href="javascript:void(0);" onclick="apply();" class="gz_a yp_a f3 dnb v_m bod_r">应聘</a>
+            <a href="javascript:void(0);" onclick="report();" class="gz_a f3 dnb v_m bod_r jb_a">举报</a></div>
+    </div>
+    #end
+</body>
+<script src="/js/jquery-1.8.3.min.js"></script>
+<script>
+    function send(url) {
+        $.ajax({
+            cache: false,
+            type: "POST",
+            url: url,
+            data: {
+                "companyId": ${job.companyId},
+                "jobId": ${job.id}
+            },
+
+            async: false,
+            error: function (request) {
+                alert("失败");
+            },
+            success: function (data) {
+                alert(data);
+            }
+        });
+    }
+    function apply() {
+        send("/apply.do");
+    }
+    function report() {
+        send("/report.do");
+    }
+    function follow(){
+        send("/follow.do");
+    }
+
+
+</script>
+</html>
