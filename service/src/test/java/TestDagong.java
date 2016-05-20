@@ -61,7 +61,7 @@ public class TestDagong {
 @Test
     public void testSearchJob(){
         int[] jobs= new int[]{52,53};
-        List<Map> maps = searchService.searchJobByType(jobs, 1);
+//        List<Map> maps = searchService.searchJobByType(jobs, 1);
 //        maps.forEach(map -> {
 //            map.forEach((key,value)->{
 //                System.out.println("key = " + key);

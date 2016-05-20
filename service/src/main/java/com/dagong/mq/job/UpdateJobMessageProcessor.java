@@ -18,39 +18,41 @@ import java.util.List;
  * Created by liuchang on 16/4/16.
  */
 
-public class CreateJobMessageProcessor extends MessageProcessor {
-
+@Service
+public class UpdateJobMessageProcessor extends MessageProcessor {
 
     @Resource
     private JobService jobService;
     @Resource
     private CompanyService companyService;
 
-    public CreateJobMessageProcessor() {
+    public UpdateJobMessageProcessor() {
         this.setTopic("job");
-        this.setTag("createJob");
+        this.setTag("updateStatus");
     }
 
     @Override
     protected void process(List<MessageExt> list) {
-
         List<Job> jobList = new ArrayList<>();
         list.forEach(messageExt -> {
             System.out.println("messageExt = " + messageExt.getTags());
             try {
                 String jobId = new String(messageExt.getBody(), "UTF-8");
                 Job job = jobService.getJobFromDB(jobId);
-                if (job == null) {
-                    return;
+                if (job != null) {
+                    String companyId = job.getCompanyId();
+                    Company company = companyService.getCompanyById(companyId);
+                    job.setCompanyName(company.getName());
+                    jobList.add(job);
+
                 }
-                String companyId = job.getCompanyId();
-                Company company = companyService.getCompanyById(companyId);
-                job.setCompanyName(company.getName());
-                jobList.add(job);
+
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }
+
         });
-        jobService.addJobToIndex(jobList);
+        jobService.updateJobInIndex(jobList);
+
     }
 }

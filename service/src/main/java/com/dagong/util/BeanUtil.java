@@ -10,34 +10,41 @@ import java.util.Map;
 /**
  * Created by liuchang on 16/5/8.
  */
-public class JobUtil {
-    public static JobVO getJobVO(Job job) {
-        if (job == null) {
+public class BeanUtil {
+    public static <T> T getVO(Object source,Class<T> clazz) {
+        if (source == null) {
             return null;
         }
-        JobVO jobVO = new JobVO();
         try {
-            BeanUtils.copyProperties(job, jobVO);
+
+            T target = clazz.newInstance();
+            BeanUtils.copyProperties(target, source);
+            return target;
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         } catch (InvocationTargetException e) {
             e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
         }
-        return jobVO;
+        return null;
     }
 
-    public static JobVO getJobVO(Map jobMap) {
-        if (jobMap == null || jobMap.isEmpty()) {
+    public static <T> T getVO(Map map,Class<T> clazz) {
+        if (map == null || map.isEmpty()) {
             return null;
         }
-        JobVO jobVO = new JobVO();
         try {
-            BeanUtils.populate(jobVO, jobMap);
+            T target = clazz.newInstance();
+            BeanUtils.populate(target, map);
+            return target;
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         } catch (InvocationTargetException e) {
             e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
         }
-        return jobVO;
+        return null;
     }
 }

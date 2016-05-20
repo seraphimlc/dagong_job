@@ -8,7 +8,7 @@ import com.dagong.mapper.JobMapper;
 import com.dagong.pojo.Job;
 import com.dagong.service.SearchService;
 import com.dagong.user.UserClient;
-import com.dagong.util.JobUtil;
+import com.dagong.util.BeanUtil;
 import org.apache.commons.beanutils.BeanUtils;
 
 import javax.annotation.Resource;
@@ -51,12 +51,12 @@ public class JobClientImpl implements JobClient {
 
         Job job = jobMapper.selectByPrimaryKey(jobId);
 
-        return JobUtil.getJobVO(job);
+        return  BeanUtil.getVO(job,JobVO.class);
     }
 
     public JobVO getJobByJobIdFromIndex(String jobId) {
         Map result = searchService.getJob(jobId);
-        return JobUtil.getJobVO(result);
+        return BeanUtil.getVO(result,JobVO.class);
     }
 
     public List<JobVO> searchJobVOByJobType(int jobType) {

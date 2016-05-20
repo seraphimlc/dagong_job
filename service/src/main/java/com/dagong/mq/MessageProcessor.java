@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by liuchang on 16/4/16.
  */
-public abstract class MessageProcessor implements MessageListenerConcurrently{
+public abstract class MessageProcessor implements MessageListenerConcurrently {
 
     @Resource
     private ReceiveMessageManager receiveMessageManager;
@@ -46,8 +46,9 @@ public abstract class MessageProcessor implements MessageListenerConcurrently{
     public void setReceiveMessageManager(ReceiveMessageManager receiveMessageManager) {
         this.receiveMessageManager = receiveMessageManager;
     }
+
     @PostConstruct
-    public void init(){
+    public void init() {
         try {
             System.out.println("MessageProcessor.init");
             receiveMessageManager.addConsumber(this);
@@ -57,12 +58,15 @@ public abstract class MessageProcessor implements MessageListenerConcurrently{
     }
 
     @Override
-    public  ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> list, ConsumeConcurrentlyContext consumeConcurrentlyContext){
+    public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> list, ConsumeConcurrentlyContext consumeConcurrentlyContext) {
 
-process(list);
+        process(list);
 
         return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
-    };
+    }
+
+    ;
+
     protected abstract void process(List<MessageExt> list);
 
 }

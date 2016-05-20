@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.annotation.Resource;
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -25,6 +26,7 @@ public class SendMessageService {
 
     @Resource
     private MQConfiguration mqConfiguration;
+
     private DefaultMQProducer defaultMQProducer;
 
     @PostConstruct
@@ -52,10 +54,6 @@ public class SendMessageService {
         System.out.println("sendResult = " + sendResult.getMsgId() + ":" + sendResult.getSendStatus());
     }
 
-    public static void main(String[] args) {
-        Map map = new HashMap<String,Object>();
-        map.put("aaaa","bbbb");
-        System.out.println("new String(JSON.toJSONBytes(map)) = " + new String(JSON.toJSONBytes(map)));
-    }
+
 
 }
