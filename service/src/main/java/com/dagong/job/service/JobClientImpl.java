@@ -9,17 +9,11 @@ import com.dagong.pojo.Job;
 import com.dagong.service.SearchService;
 import com.dagong.user.UserClient;
 import com.dagong.util.BeanUtil;
-import org.apache.commons.beanutils.BeanUtils;
 
 import javax.annotation.Resource;
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.BrokenBarrierException;
-import java.util.concurrent.CyclicBarrier;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 
 
 /**
@@ -86,7 +80,7 @@ public class JobClientImpl implements JobClient {
         List<JobVO> jobList = new ArrayList();
         List<Map> list = searchService.searchJobByType(jobTypes,page);
         list.forEach(map->{
-            jobList.add(JobUtil.getJobVO(map));
+            jobList.add(BeanUtil.getVO(map,JobVO.class));
         });
     return jobList;
     }
