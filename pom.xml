@@ -84,7 +84,7 @@
         </dependencies>
     </dependencyManagement>
     <build>
-        <finalName>dagong</finalName>
+        <finalName>dagong_job</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
