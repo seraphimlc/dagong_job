@@ -20,6 +20,7 @@
         <property name="locations">
             <list>
                 <value>classpath:base/jdbc.properties</value>
+                <value>file:${HOME}/.dagong/config.properties</value>
             </list>
         </property>
     </bean>

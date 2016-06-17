@@ -10,10 +10,10 @@
 
     <bean name="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
         <!-- 基本属性 url、user、password -->
-        <property name="url" value="${jdbc.url}"/>
-        <property name="username" value="${jdbc.username}"/>
+        <property name="url" value="${job.jdbc.url}"/>
+        <property name="username" value="${job.jdbc.username}"/>
         <!-- 123456 加密后的样子 -->
-        <property name="password" value="${jdbc.password}"/>
+        <property name="password" value="${job.jdbc.password}"/>
         <property name="initialSize" value="${jdbc.pool.minIdle}"/>
         <property name="maxActive" value="${jdbc.pool.maxActive}"/>
         <property name="minIdle" value="${jdbc.pool.minIdle}"/>
@@ -65,8 +65,9 @@
     </bean>
     <bean id="zkClient" class="com.gome.architect.idgnrt.zk.ZkClientFactoryBean">
         <property name="connectString"
-                  value="172.16.54.144:2181"/>
+                  value="${zookeeper.ip}"/>
     </bean>
+
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
 </beans>
